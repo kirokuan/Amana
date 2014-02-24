@@ -1,0 +1,614 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+	font-size:12px;
+}
+
+img {
+    vertical-align: top;
+    border: none;
+}
+
+a,
+a:link,
+a:visited,
+a:focus,
+a:active,
+a:hover {
+    text-decoration: none;
+    border-style: none;
+    outline: none;
+}
+
+a,
+a:link,
+a:visited,
+a:focus,
+a:active,
+a:hover {
+    color: #000;
+}
+
+a:hover {
+    color: #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    border: none;
+    border-spacing: 0;
+}
+
+th, td {
+    vertical-align: top;
+    border: none;
+    font-weight: normal;
+    text-align: left;
+}
+
+caption {
+    text-align: left;
+}
+
+/* --------------------------------------------- *//*
+    clearfix
+*//* --------------------------------------------- */
+
+
+
+/* --------------------------------------------- *//*
+    UI関係
+*//* --------------------------------------------- */
+
+body {
+    background: #666666;
+    overflow: auto;
+    color: #000;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+
+.list {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* --------------------------------------------- *//*
+	カード関係
+*//* --------------------------------------------- */
+
+.cardWrap {
+    float: left;
+    width: 703px;
+    height: 500px;
+    overflow: scroll;
+}
+
+.card {
+    width: 169px;
+    height: 279px;
+clear:none;
+    position: absolute;
+float:left;
+margin:5px;
+    background: #fff;
+	
+}
+
+
+#scrollListCard .aw{
+    cursor: pointer;
+}
+.card .inner {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card h3 {
+    font-weight: bold;
+    z-index: 2000;
+    line-height: 125%;
+}
+
+.card .thumbView p {
+
+    font-weight: normal;
+    z-index: 2000;
+}
+
+.card .detailView p {
+    margin-top: 9px;
+    font-weight: normal;
+    z-index: 2000;
+    line-height: 180%;
+}
+
+/* フォントサイズ */
+
+.fontL .card .thumbView h3 {
+    font-size: 14px;
+}
+
+.fontM .card .thumbView h3 {
+    font-size: 14px;
+}
+
+.fontS .card .thumbView h3 {
+    font-size: 14px;
+}
+
+.fontL .card .thumbView p {
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.fontM .card .thumbView p {
+    margin-top: 7px;
+    font-size: 12px;
+}
+
+.fontS .card .thumbView p {
+    margin-top: 7px;
+    font-size: 10px;
+}
+
+.fontL #cardListScrollerList div.item {
+    font-size: 14px;
+}
+
+.fontM #cardListScrollerList div.item {
+    font-size: 12px;
+}
+
+.fontS #cardListScrollerList div.item {
+    font-size: 10px;
+}
+
+.corner {
+    border-radius: 4px; /* CSS3 */
+    -moz-border-radius: 4px; /* Firefox */
+    -webkit-border-radius: 4px; /* Safari,Chrome */
+    background-color: #fff; /* 背景色 */
+}
+
+#cardContainer {
+    position: absolute;
+    /*left: 240px;*/
+    visibility: hidden;
+    background: #666666;
+    /*background:#000000;*/
+}
+
+
+#cardContainer .scrollThumb {
+    right: 60px;
+}
+
+
+
+
+.card .thumbView {
+    cursor: pointer;
+    position: absolute;
+}
+
+.card .detailView {
+    position: absolute;
+}
+
+#keySearchResultContainer .cornerTL {
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .cornerTL,
+#cardListScrollerList .cornerTL,
+#cardListDetail .cornerTL
+{
+    background: url(../imgs/ui/card_corner_tl.png) no-repeat;
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .cornerTR,
+#cardListScrollerList .cornerTR,
+#cardListDetail .cornerTR,
+#keySearchResultContainer .cornerTR{
+    background: url(../imgs/ui/card_corner_tr.png) no-repeat;
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+
+.card .cornerBL,
+#cardListScrollerList .cornerBL,
+#cardListDetail .cornerBL,
+#keySearchResultContainer .cornerBL{
+    background: url(../imgs/ui/card_corner_bl.png) no-repeat;
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+}
+
+.card .cornerBR,
+#cardListScrollerList .cornerBR,
+#cardListDetail .cornerBR,
+#keySearchResultContainer .cornerBR{
+    background: url(../imgs/ui/card_corner_br.png) no-repeat;
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+/* IE対策 */
+
+*html .card .cornerTR {
+    right: -1px;
+}
+
+*html .card .cornerBL {
+    bottom: -1px;
+}
+
+*html .card .cornerBR {
+    right: -1px;
+    bottom: -1px;
+}
+
+.card .thumbView .x1 {
+    margin: 15px 11px 0px;
+    width: 145px;
+}
+
+.card .thumbView .x2 {
+    margin: 15px 11px 0px;
+    width: 300px;
+}
+
+.card .thumbView p {
+    line-height: 133%;
+}
+
+.detailView .inner {
+    margin: 23px 23px 0px;
+    z-index: 2050;
+}
+
+.x4 .inner {
+    width: 300px;
+    /*height: 532px;*/
+}
+
+.x6 .inner {
+    width: 468px;
+    /*height: 532px;*/
+}
+
+.x8 .inner {
+    width: 640px;
+    /*height: 532px;*/
+}
+
+.credit .inner {
+    width: 640px;
+    height: 1130px;
+}
+
+.detailView h3 {
+
+    font-weight: bold;
+}
+
+.detailView p {
+    font-weight: normal;
+
+}
+
+
+.detailView .contact {
+    margin-right: 1px;
+}
+
+.detailView .information {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    height: 27px;
+    width: 500px;
+
+}
+
+.detailView .information a,
+.detailView .information a:link,
+.detailView .information a:visited,
+.detailView .information a:focus,
+.detailView .information a:active,
+.detailView .information a:hover {
+    color: #fff;
+}
+
+.x4 .contact,
+.x4 .link {
+    width: 167px;
+    height: 27px;
+    display: block;
+}
+
+.x6 .contact,
+.x6 .link {
+    width: 254px;
+    height: 27px;
+    display: block;
+}
+
+.x8 .contact,
+.x8 .link {
+    width: 341px;
+    height: 27px;
+    display: block;
+}
+
+.x4 .information {
+    width: 344px;
+    top: 532px;
+}
+
+.x6 .information {
+    width: 517px;
+    top: 532px;
+}
+
+.x8 .information {
+    width: 692px;
+    top: 532px;
+}
+
+.topics .inner {
+    margin-left: 14px;
+}
+
+.thumbTopics {
+    text-align: center;
+}
+
+.topics .thumbView h3 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.topics .thumbView h4 {
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 100%;
+
+    /*font-family:Lato;*/
+}
+
+.topics .thumbView p {
+    font-weight: normal;
+    line-height: 133%;
+}
+
+.topics .detailView h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.topics .detailView h4 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    line-height: 166%;
+}
+
+.topics .detailView p {
+    font-weight: normal;
+    line-height: 166%;
+    margin-bottom: 26px;
+}
+
+.topics .detailView p.date {
+    font-weight: normal;
+    line-height: 100%;
+    color: #000;
+}
+
+
+
+div.linkHover {
+    z-index: 10000;
+}
+
+
+
+.x4 .contact, .x4 .link {
+    width: 167px;
+}
+
+.x4 .group_b .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x4_amana.jpg);
+}
+
+.x4 .group_b .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x4_amana_over.jpg);
+}
+
+.x4 .group_a .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x4_amanaimages.jpg);
+}
+
+.x4 .group_a .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x4_amanaimages_over.jpg);
+}
+
+.x4 .group_c .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x4_amanainteractive.jpg);
+}
+
+.x4 .group_c .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x4_amanainteractive_over.jpg);
+}
+
+.x4 .group_d .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x4_amanaholdings.jpg);
+}
+
+.x4 .group_d .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x4_amanaholdings_over.jpg);
+}
+
+.x6 .contact, .x6 .link {
+    width: 254px;
+}
+
+.x6 .group_b .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x6_amana.jpg);
+}
+
+.x6 .group_b .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x6_amana_over.jpg);
+}
+
+.x6 .group_a .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x6_amanaimages.jpg);
+}
+
+.x6 .group_a .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x6_amanaimages_over.jpg);
+}
+
+.x6 .group_c .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x6_amanainteractive.jpg);
+}
+
+.x6 .group_c .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x6_amanainteractive_over.jpg);
+}
+
+.x6 .group_d .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x6_amanaholdings.jpg);
+}
+
+.x6 .group_d .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x6_amanaholdings_over.jpg);
+}
+
+.x8 .contact, .x8 .link {
+    width: 341px;
+}
+
+.x8 .group_d .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x8_amanaholdings.jpg);
+}
+
+.x8 .group_d .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x8_amanaholdings_over.jpg);
+}
+
+.x8 .group_b .linkBlock {
+    background-image: url(../imgs/ui/open_bg_x8_amana.jpg);
+}
+
+.x8 .group_b .linkBlockOver {
+    background-image: url(../imgs/ui/open_bg_x8_amana_over.jpg);
+}
+
+.detailView .information {
+    color: #fff;
+    height: 27px;
+    font-size: 12px;
+    line-height: 27px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.detailView .contact,
+.detailView .link {
+    float: left;
+}
+
+.detailView .contact table,
+.detailView .link table {
+    margin: 0 auto;
+}
+
+/* -------------------------------------------------------------
+cardListScrollerList
+*/
+
+#cardListScrollerList {
+    position: absolute;
+}
+
+#cardListScrollerList div.item {
+    margin-bottom: 4px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 14px;
+
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    position: relative;
+}
+
+#cardListDetail {
+    /*display: none;*/
+}
+
+#cardListScrollerList div.item strong {
+    margin-right: 17px;
+}
+
+#cardListScrollerList div.aw {
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+#cardListScrollerList div.listItem {
+    cursor: pointer;
+}
+
+
+#cardListScrollerList .pageItem {
+    color:#ffffff;
+    padding: 0 14px;
+}
+#cardListScrollerList .pageItem h2 {
+    margin: 12px 0 0 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+#cardListScrollerList .pageItem p {
+    margin: 12px 0 15px 0;
+    font-size: 12px;
+}
